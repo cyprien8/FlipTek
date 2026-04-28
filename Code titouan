@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+  int nbjoueurs;
+  do{
+  printf("Quel est le nombre de joueurs ?");
+  scanf("%d",&nbjoueurs);
+  }while(nbjoueurs<=0);
+
+  Joueur *listejoueur=malloc(sizeof(Joueur)*nbjoueurs);
+  if(listejoueur==NULL){
+    printf("erreur d'allocation");
+    exit(1);
+  }
+  for(int i=0; i<nbjoueurs; i++){
+    printf("Quel est le pseudo du joueur %d",i+1);
+    scanf("%s",listejoueur[i].pseudo);
+  }
+  
+
+
+  free(listejoueur);
+  return 0;
+}
