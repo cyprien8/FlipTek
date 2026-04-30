@@ -1,1 +1,52 @@
-#include<stdio.h>
+ #include<stdio.h>
+ #include<stdlib.h>
+ #include<time.h>
+ 
+ typedef struct{
+     int valeur; // valeur de la carte 
+     char label[5]; // ce qui va être affiché à l'ecran 
+     int est_bonus; // 0 ou 1, pour savoir rapidement si la carte est bonus(1) ou normale(0)
+ }Carte;
+ 
+ typedef struct{
+     char nom[100];
+     int score_total;
+     int score_manche;
+     Carte main[7];
+     int taille_main; // savoir rapidement combien de carte il a dans la main 
+     int est_actif; // savoir si le joueur est encore dans la manche (1) ou si il est parti (0)
+ }Joueur;
+ 
+ 
+ void vider_main(Joueur *j){
+     j->taille_main=0;
+ }
+ 
+ void ajouter_carte(Joueur *j, Carte c){
+     if (j->taille_main<7){
+         j->main[j->taille_main]=c;
+         j->taille_main++;
+     }
+ }
+ 
+ void affiche_carte( Carte c){
+     
+     if(c.est_bonus==1){
+        printf("\033[33m");
+        printf("-------\n");
+        printf("|     |\n");
+        printf("|  %s  |\n", c.label);
+        printf("|     |\n");
+        printf("-------\n");
+        printf("\033[0m");
+     }
+     else{
+        printf("\033[37m");
+        printf("-------\n");
+        printf("|     |\n");
+        printf("|  %s  |\n", c.label);
+        printf("|     |\n");
+        printf("-------\n");
+        printf("\033[0m");
+     }
+ }
