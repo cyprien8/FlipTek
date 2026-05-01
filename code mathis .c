@@ -41,7 +41,17 @@ if (index !=TAILLE_DECK) {
         exit(1);
     }
 
+void melange_deck(Deck *deck) {
+    srand(time(NULL));
+    for (int i =TAILLE_DECK- 1; i > 0; i--) {
+        int j = rand() % (TAILLE_DECK+ 1);
 
+        
+        carte temporaire  = deck->cards[i];
+        (*deck).cartes[i] = deck->cards[j];
+        (*deck).cartes[j] = temporaire;     // echange les cartes 
+    }
+}
 
 
 
