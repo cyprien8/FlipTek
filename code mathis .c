@@ -1,8 +1,8 @@
 #include "mon_prog.h"
 
 void def_carte(Carte *carte, int valeur, char *id) { //creer une carte
-    (*carte).valeur= valeur;
-    strcpy((*carte).id,id);
+    carte->valeur= valeur;
+    strcpy(carte->id,id);
 }
 
 void deck_base(Deck *deck) {
@@ -24,34 +24,55 @@ else{
 sprintf(id,"%d",numero_carte);// permet d'afficher sous forme de texte la variable qui est un int a la base
 
 for(int c=0;c<nbExemplaire_carte;c++){
-  def_carte((*&deck).cartes[index],numero_carte,id);
+  def_carte(&deck->cartes[index],numero_carte,id);
   index++;  
 }
 }
-def_carte((*&deck).cartes[index++], CARD_X2,    "x2");
-def_carte((*&deck).cartes[index++], CARD_PLUS_2, "+2");
-def_carte((*&deck).cartes[index++], CARD_PLUS_4, "+4");
-def_carte((*&deck).cartes[index++], CARD_PLUS_6, "+6");
-def_carte((*&deck).cartes[index++], CARD_PLUS_8, "+8");
-def_carte((*&deck).cartes[index++], CARD_PLUS_10,"+10");
+def_carte(&deck->cartes[index++], CARD_X2,    "x2");
+def_carte(&deck->cartes[index++], CARD_PLUS_2, "+2");
+def_carte(&deck->cartes[index++], CARD_PLUS_4, "+4");
+def_carte(&deck->cartes[index++], CARD_PLUS_6, "+6");
+def_carte(&deck->cartes[index++], CARD_PLUS_8, "+8");
+def_carte(&deck->cartes[index++], CARD_PLUS_10,"+10");
 
 
 if (index !=TAILLE_DECK) {
         printf("[initDeck] ERREUR : %d cartes initialisées au lieu de %d\n",index, TAILLE_DECK);
         exit(1);
     }
+    deck->reste = TAILLE_DECK;
+}
+
 
 void melange_deck(Deck *deck) {
     srand(time(NULL));
     for (int i =TAILLE_DECK- 1; i > 0; i--) {
-        int j = rand() % (TAILLE_DECK+ 1);
+        int j = rand() % (i+1);
 
         
-        carte temporaire  = deck->cards[i];
-        (*deck).cartes[i] = deck->cards[j];
-        (*deck).cartes[j] = temporaire;     // echange les cartes 
+        Carte temporaire  = deck->cartes[i];
+        deck->cartes[i] = deck->cartes[j];
+        deck->cartes[j] = temporaire;     // echange les cartes 
     }
 }
+
+
+Carte *drawCard(Deck *deck) {
+
+    if (deck->reste <= 0) {
+        printf("La pioche est vide !\n");
+        return NULL;
+    }
+
+    deck->reste--;
+    return &deck->cartes[deck->reste];
+}
+
+
+
+
+
+
 
 
 
