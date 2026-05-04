@@ -6,12 +6,12 @@
 #include <time.h>
 
 
-#define CARD_X2      -1
-#define CARD_PLUS_2  -2
-#define CARD_PLUS_4  -3
-#define CARD_PLUS_6  -4
-#define CARD_PLUS_8  -5
-#define CARD_PLUS_10 -6
+#define CARTE_X2      -1
+#define CARTE_PLUS_2  -2
+#define CARTE_PLUS_4  -3
+#define CARTE_PLUS_6  -4
+#define CARTE_PLUS_8  -5
+#define CARTE_PLUS_10 -6
 
 #define TAILLE_DECK 86
 #define TAILLE_ID   8
