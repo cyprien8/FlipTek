@@ -28,12 +28,12 @@ for(int c=0;c<nbExemplaire_carte;c++){
   index++;  
 }
 }
-def_carte(&deck->cartes[index++], CARD_X2,    "x2");
-def_carte(&deck->cartes[index++], CARD_PLUS_2, "+2");
-def_carte(&deck->cartes[index++], CARD_PLUS_4, "+4");
-def_carte(&deck->cartes[index++], CARD_PLUS_6, "+6");
-def_carte(&deck->cartes[index++], CARD_PLUS_8, "+8");
-def_carte(&deck->cartes[index++], CARD_PLUS_10,"+10");
+def_carte(&deck->cartes[index++], CARTE_X2,    "x2");
+def_carte(&deck->cartes[index++], CARTE_PLUS_2, "+2");
+def_carte(&deck->cartes[index++], CARTE_PLUS_4, "+4");
+def_carte(&deck->cartes[index++], CARTE_PLUS_6, "+6");
+def_carte(&deck->cartes[index++], CARTE_PLUS_8, "+8");
+def_carte(&deck->cartes[index++], CARTE_PLUS_10,"+10");
 
 
 if (index !=TAILLE_DECK) {
