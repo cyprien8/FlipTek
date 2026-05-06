@@ -1,5 +1,7 @@
+#include "final.h"
+
 int main(){
-  
+  Deck deck;
   int nbjoueurs;
   do{
   printf("Quel est le nombre de joueurs ?");
@@ -16,7 +18,7 @@ int main(){
     scanf("%s",listejoueur[i].nom); // remplissage des pseudos dans le tableau
     listejoueur[i].score_total=0;
   }
-
+  deck_base(deck); //appel de la fonction pour créer le deck
 
   free(listejoueur);
   return 0;
