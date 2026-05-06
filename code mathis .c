@@ -37,7 +37,7 @@ def_carte(&deck->cartes[index++], CARTE_PLUS_10,"+10");
 
 
 if (index !=TAILLE_DECK) {
-        printf("[initDeck] ERREUR : %d cartes initialisées au lieu de %d\n",index, TAILLE_DECK);
+        printf("[initDeck] erreur : %d cartes initialisées au lieu de %d\n",index, TAILLE_DECK);
         exit(1);
     }
     deck->reste = TAILLE_DECK;
