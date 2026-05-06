@@ -1,22 +1,23 @@
 #include "mon_prog.h"
-void def_carte(Carte *carte, int valeur, char *id) { //creer une carte
+
+void def_carte(Carte *carte, int valeur, char *label) { //creer une carte
     carte->valeur= valeur;
-    strcpy(carte->id,id);
+    strcpy(carte->label,label);
 }
 void pioche_base(Pioche *pioche) {
     int index = 0;   //position dans le tableau de carte 
-    char id[8];   
+    char label[8]   
     int nbExemplaire_carte;
 for(int numero_carte=0;numero_carte<=12;numero_carte++){
     
-if (numero_carte < 2) {
-    nbExemplaire_carte = 1; // pr cartes 0 et 1
+if (numero_carte < 2) {                    
+    nbExemplaire_carte = 1; // initialise  le nombre d'exemplaire de carte pr cartes 0 et 1
 }
 else{
     nbExemplaire_carte =numero_carte; // Pour les cartes 2, 3, 4... jusqu'à 12
     }
-sprintf(id,"%d",numero_carte);// permet d'afficher sous forme de texte la variable qui est un int a la base
-for(int c=0;c<nbExemplaire_carte;c++){
+sprintf(label,"%d",numero_carte);// permet d'afficher sous forme de texte la variable qui est un int a la base
+for(int c=0;c<nbExemplaire_carte;c++){// remplis le tableau de carte avec les carte innitialisé juste avant . il reste les carte bonnus 
   def_carte(&pioche->cartes[index],numero_carte,id);
   index++;  
 }
