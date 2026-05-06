@@ -19,6 +19,7 @@ int main(){
     listejoueur[i].score_total=0;
   }
   pioche_base(pioche); //appel de la fonction pour créer la pioche
+  melange_pioche(pioche); //appel de la fonction pour mélanger la pioche
 
 
 
