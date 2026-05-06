@@ -30,9 +30,6 @@ void vider_main(Joueur *j){ // fonction pour enlever toutes les cartes d'un joue
         printf("|     |\n");
         printf("|  %s  |\n", c.label);
         printf("|     |\n");int score(Joueur *j){ // fonction pour ajouter le score de la manche au score total d'un joueur 
-    j.score_total=j.score_total+j.score_manche
-
-}
         printf("-------\n");
         printf("\033[0m"); // on revient à la couleur par défaut 
      }
