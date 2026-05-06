@@ -16,3 +16,5 @@
      int taille_main; // savoir rapidement combien de carte il a dans la main 
      int est_actif; // savoir si le joueur est encore dans la manche (1) ou si il est parti (0)
  }Joueur;
+
+void vider_main(Joueur *j)
