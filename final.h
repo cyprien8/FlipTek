@@ -31,7 +31,7 @@
 typedef struct {
     Carte cartes[TAILLE_DECK];
     int   reste;
-} Deck;
+} Pioche;
 
 void vider_main(Joueur *j)
 void affiche_carte( Carte c)
