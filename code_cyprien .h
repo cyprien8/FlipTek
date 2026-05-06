@@ -27,6 +27,11 @@
      int est_actif; // savoir si le joueur est encore dans la manche (1) ou si il est parti (0)
  }Joueur;
 
+typedef struct {
+    Carte cartes[TAILLE_DECK];
+    int   reste;
+} Deck;
+
 void vider_main(Joueur *j)
 void affiche_carte( Carte c)
 void ajouter_carte(Joueur *j, Carte c)
