@@ -26,5 +26,5 @@ int main(){
 
 
 
-Squelette de la boucle principal :
+
 
