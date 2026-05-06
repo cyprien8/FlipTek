@@ -5,10 +5,10 @@ void vider_main(Joueur *j){ // fonction pour enlever toutes les cartes d'un joue
  }
  
  void ajouter_carte(Joueur *j, Pioche pioche, Carte c){ // fonction pour ajouter une carte a la main d'un joueur ( pioche )
-      taille_main=0;
+      
       c = carte_dessus(pioche);
      if (j->taille_main<7){
-         j->main[j->taille_main] = j->main + c;
+         j->main[j->taille_main] =  c;
          j->taille_main++;
      }
  }
