@@ -29,7 +29,7 @@
  }Joueur;
 
 typedef struct {
-    Carte cartes[TAILLE_PIOCHE];
+    Carte cartes[TAILLE_PIOCHE]; // tableau avec les cartes de la pioche
     int   reste; // nombre de cartes restantes dans la pioche
 } Pioche;
 
