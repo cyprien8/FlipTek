@@ -1,6 +1,6 @@
 #include "final.h"
 
-int tour(Joueur* jeu_joueur, int nbjoueurs,){
+int tour(Joueur* jeu_joueur, int nbjoueurs, int* pioche, ){
   if(nbjoueurs==0){
     return 0;
   }
@@ -13,7 +13,7 @@ int tour(Joueur* jeu_joueur, int nbjoueurs,){
 
 
 int main(){
-  Pioche pioche;
+  Pioche p;
   int nbjoueurs;
   do{
   printf("Quel est le nombre de joueurs ?");
@@ -30,7 +30,7 @@ int main(){
     scanf("%s",listejoueur[i].nom); // remplissage des pseudos dans le tableau
     listejoueur[i].score_total=0;
   }
-  pioche_base(pioche); //appel de la fonction pour créer la pioche
+  pioche_base(p); //appel de la fonction pour créer la pioche
   melange_pioche(pioche); //appel de la fonction pour mélanger la pioche
 
 
