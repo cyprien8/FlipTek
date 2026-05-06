@@ -31,7 +31,7 @@ int tour(Joueur* tab, nbjoueurs){
 if(nbjoueurs==0){
   return 0;
 }
-
+ajouter_carte(tab[0], Carte c)
 //Appel de la fonction piocher du premier joueur(tab[0])
 
   return tour(tab+1,nbjoueurs-1);
