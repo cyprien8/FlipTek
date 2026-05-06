@@ -41,7 +41,14 @@ void melange_pioche(Pioche *pioche) {
         Carte temporaire  = pioche->cartes[i];
         pioche->cartes[i] = pioche->cartes[j];
 
-
+Carte *carte_dessus(Pioche *pioche) {
+    if (pioche->reste <= 0) {
+        printf("La pioche est vide !\n");
+        return NULL;
+    }
+    pioche->reste--;
+    return &pioche->cartes[pioche->reste];
+}
 
 
 
