@@ -53,6 +53,21 @@ Carte *carte_dessus(Pioche *pioche) {
 
 
 
+while(//condition arret de mache ){
+ if(actif=0){
+     // passe au joueur suivant
+}
+else{
+// fais le tour du joueur
+    appel de la fonction tour 
+}
+
+
+
+
+
+
+
 
 
 
