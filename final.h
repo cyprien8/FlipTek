@@ -10,7 +10,7 @@
 #define CARTE_PLUS_6  4
 #define CARTE_PLUS_8  5
 #define CARTE_PLUS_10 6
-#define TAILLE_DECK 86
+#define TAILLE_PIOCHE 86
 
 
  typedef struct{
@@ -29,8 +29,8 @@
  }Joueur;
 
 typedef struct {
-    Carte cartes[TAILLE_DECK];
-    int   reste;
+    Carte cartes[TAILLE_PIOCHE];
+    int   reste; // nombre de cartes restantes dans la pioche
 } Pioche;
 
 void vider_main(Joueur *j)
