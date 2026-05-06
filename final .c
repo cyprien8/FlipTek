@@ -14,7 +14,7 @@ int main(){
   for(int i=0; i<nbjoueurs; i++){
     printf("Quel est le pseudo du joueur %d",i+1);
     scanf("%s",listejoueur[i].nom); // remplissage des pseudos dans le tableau
-    listejoueur[i].score=0;
+    listejoueur[i].score_total=0;
   }
 
 
