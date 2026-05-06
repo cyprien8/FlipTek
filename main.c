@@ -1,5 +1,17 @@
 #include "final.h"
 
+int tour(Joueur* jeu_joueur, int nbjoueurs,){
+  if(nbjoueurs==0){
+    return 0;
+  }
+  ajouter_carte(jeu_joueur[0], Carte c)
+  //Appel de la fonction piocher du premier joueur(tab[0])
+
+  return tour(tab+1,nbjoueurs-1);
+    
+}
+
+
 int main(){
   Pioche pioche;
   int nbjoueurs;
@@ -22,7 +34,8 @@ int main(){
   melange_pioche(pioche); //appel de la fonction pour mélanger la pioche
 
 
-
+  
+  tour(listejoueur,nbjoueurs,pioche);
 
 
 
