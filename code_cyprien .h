@@ -1,7 +1,17 @@
  #include<stdio.h>
  #include<stdlib.h>
  #include<time.h>
- 
+
+
+#define CARTE_X2      1
+#define CARTE_PLUS_2  2
+#define CARTE_PLUS_4  3
+#define CARTE_PLUS_6  4
+#define CARTE_PLUS_8  5
+#define CARTE_PLUS_10 6
+#define TAILLE_DECK 86
+
+
  typedef struct{
      int valeur; // valeur de la carte 
      char label[5]; // ce qui va être affiché à l'ecran 
