@@ -19,4 +19,4 @@
 
 void vider_main(Joueur *j)
 void affiche_carte( Carte c)
-
+void ajouter_carte(Joueur *j, Carte c)
