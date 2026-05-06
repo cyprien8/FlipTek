@@ -1,4 +1,6 @@
-  void vider_main(Joueur *j){ // fonction pour enlever toutes les cartes d'un joueur en fin de manche 
+#include<code_cyprien.h>
+
+void vider_main(Joueur *j){ // fonction pour enlever toutes les cartes d'un joueur en fin de manche 
      j->taille_main=0;
  }
  
