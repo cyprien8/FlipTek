@@ -22,12 +22,12 @@ for(int c=0;c<nbExemplaire_carte;c++){// remplis le tableau de carte avec les ca
   index++;  
 }
 }
-def_carte(&pioche->cartes[index++], CARTE_X2,    "x2");
-def_carte(&pioche->cartes[index++], CARTE_PLUS_2, "+2");
-def_carte(&pioche->cartes[index++], CARTE_PLUS_4, "+4");
-def_carte(&pioche->cartes[index++], CARTE_PLUS_6, "+6");
-def_carte(&pioche->cartes[index++], CARTE_PLUS_8, "+8");
-def_carte(&pioche->cartes[index++], CARTE_PLUS_10,"+10");
+def_carte(&(pioche->cartes[index++]), CARTE_X2,    "x2");
+def_carte(&(pioche->cartes[index++]), CARTE_PLUS_2, "+2");
+def_carte(&(pioche->cartes[index++]), CARTE_PLUS_4, "+4");
+def_carte(&(pioche->cartes[index++]), CARTE_PLUS_6, "+6");
+def_carte(&(pioche->cartes[index++]), CARTE_PLUS_8, "+8");
+def_carte(&(pioche->cartes[index++]), CARTE_PLUS_10,"+10");
 if (index !=TAILLE_PIOCHE) {
         printf("[initPioche] erreur : %d cartes initialisées au lieu de %d\n",index, TAILLE_PIOCHE);
         exit(1);
