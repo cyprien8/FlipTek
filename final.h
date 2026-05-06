@@ -37,6 +37,6 @@ void vider_main(Joueur *j)
 void affiche_carte( Carte c)
 void ajouter_carte(Joueur *j, Carte c)
 void   def_carte(Carte *carte, int valeur, char *id);
-void   deck_base(Deck *deck);
+void   pioche_base(Deck *deck);
 void   melange_deck(Deck *deck);
 Carte *drawCard(Deck *deck);
