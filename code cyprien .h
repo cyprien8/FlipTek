@@ -18,3 +18,5 @@
  }Joueur;
 
 void vider_main(Joueur *j)
+void affiche_carte( Carte c)
+
