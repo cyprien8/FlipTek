@@ -39,4 +39,4 @@ void ajouter_carte(Joueur *j, Carte c)
 void   def_carte(Carte *carte, int valeur, char *id);
 void   pioche_base(Pioche *pioche);
 void   melange_pioche(Pioche *pioche);
-Carte *carte_dessus(Pioche *pioche);
+Carte carte_dessus(Pioche *pioche);
