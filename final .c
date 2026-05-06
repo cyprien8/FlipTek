@@ -1,4 +1,5 @@
 int main(){
+  
   int nbjoueurs;
   do{
   printf("Quel est le nombre de joueurs ?");
