@@ -36,3 +36,11 @@ ajouter_carte(tab[0], Carte c)
 
   return tour(tab+1,nbjoueurs-1);
 
+
+
+for(int i=0;i<nbjoueurs;i++){
+  if(listejoueur[i].est_actif
+
+
+
+
