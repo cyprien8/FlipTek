@@ -37,9 +37,51 @@ ajouter_carte(tab[0], Carte c)
   return tour(tab+1,nbjoueurs-1);
 
 
+int recherche_dichotomique_main(int* tab, int debut, int fin, int carte){ //recherche si la carte est deja dans la main a condition que la main soit trié
+  if(debut>fin){
+    return NULL;
+  }
+  int millieu=(fin+debut)/2;
+  if(tab[millieu]==carte){
+    return 1;
+  }
+  if(tab[millieu]>carte){
+    return recherche_dichotomique_main(tab+1,millieu+1,fin,carte);
+  }
+  if(tab[millieu]<carte){
+    return recherche_dichotomique_main(tab+1,debut,millieu-1,carte);
+  }
+}
 
+
+
+int jeu;
+int n;
 for(int i=0;i<nbjoueurs;i++){
-  if(listejoueur[i].est_actif
+  if(listejoueur[i].est_actif==1){    //condition pour savoir si le joueur est toujours dans le jeu
+    printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher");    //demander si il est toujours dans le jeu si il veut piocher ou s'arreter
+    scanf("%c",&jeu);
+    if(jeu=='A'){
+      listejoueur[i].est_actif==0;    //si il s'arrete alors il est inactif durant la manche
+    }
+    else if(jeu=='P'){   //sinon il pioche 
+      //fonction piocher
+      n=recherche_dichotomique_main(listejoueur,0,nbjoueurs,carte);//carte resultant de la fonction piocher
+      if(n==1){    //la carte pioché est deja dans la main
+        listejoueur[i].score_manche=0;
+        listejoueur[i].est_actif=0; //devient inactif
+      }
+      else{
+        //fonction ajouter main
+      }
+    }
+    if(listejoueur[i].taille_main==7){    //un joueur a cumulé 7 cartes dans sa main donc arret de la manche
+      //arret de la manche 
+      listejoueur[i].score_manche+=15;  //bonus de +15
+    }
+  }
+}
+
 
 
 
