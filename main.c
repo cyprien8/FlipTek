@@ -1,13 +1,13 @@
 #include "final.h"
 
-int tour(Joueur* jeu_joueur, int nbjoueurs, ){
+//*int tour(Joueur* jeu_joueur, int nbjoueurs, ){
   if(nbjoueurs==0){
     return 0;
   }
   ajouter_carte(jeu_joueur[0],)
   //Appel de la fonction piocher du premier joueur(tab[0])
 
-  return tour(jeu_joueur+1,nbjoueurs-1);
+  return tour(jeu_joueur+1,nbjoueurs-1);*//
     
 }
 
