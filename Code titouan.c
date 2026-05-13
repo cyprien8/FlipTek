@@ -55,7 +55,7 @@ int recherche_dichotomique_main(int* tab, int debut, int fin, int carte){ //rech
 
 
 
-int jeu;
+char jeu;
 int n;
 for(int i=0;i<nbjoueurs;i++){
   if(listejoueur[i].est_actif==1){    //condition pour savoir si le joueur est toujours dans le jeu
