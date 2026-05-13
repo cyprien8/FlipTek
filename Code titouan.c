@@ -84,5 +84,15 @@ for(int i=0;i<nbjoueurs;i++){
 
 
 
+//Somme des cartes en main et ajouté au score
+int somme_main(Joueur* j){
+int score_manche=0;
+  for(int i=0; i< j->taille_main; i++){
+    score_manche=score_manche + j->main[i];
+  }
+}
+
+
+
 
 
