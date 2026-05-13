@@ -25,7 +25,7 @@ int main(){
 
 
 
-int tour(Joueur* tab, nbjoueurs){
+int tour(Joueur* tab, nbjoueurs){ //UTILISER POUR IMPLEMENTER TOUS LES JOUEURS
 if(nbjoueurs==0){
   return 0;
 }
