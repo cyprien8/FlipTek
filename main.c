@@ -38,6 +38,8 @@ int main(){
 
   // lancement de la partie/1ere manche
 
+int manche_en_cours=1;
+while(manche_en_cours=1){
   //for(int i=0;i<nbjoueurs;i++){ initialisation des parametre, on parcourt les joueurs
     vider_main(listejoueur[0]);
     listejoueur[0].est_actif=1;
@@ -47,7 +49,7 @@ int main(){
     char jeu;
     int n;
     Carte carte_pioché;
-    if(listejoueur[0].est_actif==0){ //est ce que le joueur est toujours dans le jeu
+    if(listejoueur[0].est_actif==1){ //est ce que le joueur est toujours dans le jeu
       printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher");
       scanf("%c",&jeu);
       if(jeu=='A'){
@@ -64,24 +66,22 @@ int main(){
         }
         else{
           ajouter_carte(liste_joueur[0], carte_pioché);
-          
         }
-        
-        
-        
-      
-      
-  
-  tour(listejoueur,nbjoueurs,pioche);
-
-
-
-
-
-
-
-
-  
+      }
+    }
+    manche_en_cours=arret_manche(listejoueur,nbjoueurs);
+      if(manche_en_cours==0){ 
+        printf("Arret de la manche car un joueur a atteint le maximum de carte");
+      }
+      if(manche_en_cours==2){
+        printf("Plus aucun joueur n'est actif");
+      }
+      if(manche_en_cours==1){
+        printf("Continuation de la manche");
+      }
+  }
+  listejoueur[0].score_manche=somme_main(;
+    
   free(listejoueur);
   return 0;
 }
