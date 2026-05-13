@@ -4,14 +4,13 @@ void vider_main(Joueur *j){ // fonction pour enlever toutes les cartes d'un joue
      j->taille_main=0;
  }
  
- void ajouter_carte(Joueur *j, Pioche pioche, Carte c){ // fonction pour ajouter une carte a la main d'un joueur ( pioche )
-      
-      c = carte_dessus(pioche);
+void ajouter_carte(Joueur *j, Carte c){ // fonction pour ajouter une carte a la main d'un joueur 
      if (j->taille_main<7){
          j->main[j->taille_main] =  c;
          j->taille_main++;
      }
  }
+ 
  
  void affiche_carte( Carte c){ // effet visuel pour distinguer les cartes bonus des autres 
      
