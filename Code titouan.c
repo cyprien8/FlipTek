@@ -1,6 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-
+#include "final.h"
 int main(){
   int nbjoueurs;
   do{
@@ -90,6 +88,27 @@ int score_manche=0;
   for(int i=0; i< j->taille_main; i++){
     score_manche=score_manche + j->main[i];
   }
+}
+
+
+
+void triInsertion(int* main, int taille_main) {
+    int i, j, cle;
+    for (i = 1; i < n; i++) {
+        cle = T[i];    // On extrait l'élément à placer (la carte qu'on a en main)
+        j = i - 1;     // On commence à comparer avec l'élément juste à gauche
+
+        /* On décale les éléments de la partie triée vers la droite 
+           tant qu'ils sont plus grands que la 'cle'
+        */
+        while (j >= 0 && T[j] > cle) {
+            T[j + 1] = T[j]; // Le décalage vers la droite
+            j = j - 1;       // On passe à l'élément suivant vers la gauche
+        }
+        
+        // On insère la 'cle' à sa place finale (juste après l'élément plus petit)
+        T[j + 1] = cle; 
+    }
 }
 
 
