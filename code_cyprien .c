@@ -39,3 +39,21 @@ int score(Joueur *j){ // fonction pour ajouter le score de la manche au score to
     j.score_total=j.score_total+j.score_manche
      return(j.score_total);
 }
+
+
+
+int arret_manche(Joueur *listejoueur, int nbjoueurs){
+    // Condition 1 : un joueur a 7 cartes
+    for(int i=0 ; i<nbjoueurs ; i++){
+        if(listejoueur[i].taille_main==7 && joueurs[i].est_actif==1){
+            return 1;
+        }
+    }
+    // Condition 2 : tous les joueurs sont inactifs
+    for(int i=0 ; i<nbjoueurs ; i++){
+        if(listejoueur[i].est_actif == 1){
+            return 0; // un joueur encore actif, on continue
+        }
+    }
+    return 1; // plus personne d'actif, la manche s'arrête
+}
