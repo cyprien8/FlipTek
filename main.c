@@ -66,6 +66,7 @@ while(manche_en_cours=1){
         }
         else{
           ajouter_carte(liste_joueur[0], carte_pioché);
+          tri_main(
         }
       }
     }
