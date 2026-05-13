@@ -32,7 +32,7 @@ int main(){
   
 
 int manche_en_cours=1;
-while(manche_en_cours=1){
+while(manche_en_cours==1){
   //for(int i=0;i<nbjoueurs;i++){ initialisation des parametre, on parcourt les joueurs
     vider_main(listejoueur[0]);
     listejoueur[0].est_actif=1;
