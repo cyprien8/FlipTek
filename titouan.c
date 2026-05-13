@@ -43,7 +43,7 @@ int recherche_dichotomique_main(Carte* tab, int debut, int fin, Carte carte){ //
 void jouer_manche(Joueur* listejoueur, int nbjoueurs, Pioche *pioche){
 int manche_en_cours=1;
 	for(int i=0;i<nbjoueurs;i++){ //initialisation des parametre, on parcourt les joueurs
-    vider_main(listejoueur);
+    vider_main(listejoueur,nbjoueurs);
     listejoueur[i].est_actif=1;
     listejoueur[i].score_manche=0;
 							  }
