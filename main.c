@@ -24,10 +24,12 @@ int main(){
     listejoueur[i].score_total=0;
   }
   
+  // lancement de la partie/1ere manche
+  
   pioche_base(p); //appel de la fonction pour initialise la pioche
   melange_pioche(p); //appel de la fonction pour mélanger la pioche
 
-  // lancement de la partie/1ere manche
+  
 
 int manche_en_cours=1;
 while(manche_en_cours=1){
