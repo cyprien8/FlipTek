@@ -36,7 +36,26 @@ int main(){
   pioche_base(p); //appel de la fonction pour initialise la pioche
   melange_pioche(p); //appel de la fonction pour mélanger la pioche
 
+  // lancement de la partie/1ere manche
 
+  //for(int i=0;i<nbjoueurs;i++){ initialisation des parametre, on parcourt les joueurs
+    vider_main(listejoueur[0]);
+    listejoueur[0].est_actif=1;
+    listejoueur[0].score_manche=0;
+
+    //debut de la manche 
+    char jeu;
+    int n;
+    if(listejoueur[0].est_actif==0){ //est ce que le joueur est toujours dans le jeu
+      printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher");
+      scanf("%c",&jeu);
+      if(jeu=='A'){
+        listejoueur[0].est_actif=0; //si il s'arrete il devient inactif
+      }
+      else if(jeu=='P'){
+        
+      
+      
   
   tour(listejoueur,nbjoueurs,pioche);
 
