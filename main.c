@@ -80,7 +80,7 @@ while(manche_en_cours=1){
         printf("Continuation de la manche");
       }
   }
-  listejoueur[0].score_manche=somme_main(;
+  listejoueur[0].score_manche=somme_main(listejoueur[0]);
     
   free(listejoueur);
   return 0;
