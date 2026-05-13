@@ -34,7 +34,7 @@ int main(){
   }
   
   pioche_base(p); //appel de la fonction pour initialise la pioche
-  melange_pioche(pioche); //appel de la fonction pour mélanger la pioche
+  melange_pioche(p); //appel de la fonction pour mélanger la pioche
 
 
   
