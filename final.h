@@ -44,6 +44,7 @@ int arret_manche(Joueur *listejoueur, int nbjoueurs);
 int somme_main(Joueur * j);
 int recherche_dichotomique_main(Carte* tab, int debut, int fin, Carte carte);
 void tri_main(Carte* main, int taille_main);
+void jouer_manche(Joueur* listejoueur, int nbjoueurs, Pioche* pioche);
 
 
 
