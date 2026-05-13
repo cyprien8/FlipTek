@@ -55,8 +55,8 @@ while(manche_en_cours==1){
     Carte carte_pioche;
 	for(int j=0;j<nbjoueurs;j++){
     if(listejoueur[j].est_actif==1){ //est ce que le joueur est toujours dans le jeu
-      printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher");
-      scanf("%c",&jeu);
+      printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher \n");
+      scanf(" %c",&jeu);
       if(jeu=='A'){
         listejoueur[j].est_actif=0; //si il s'arrete il devient inactif
       }
@@ -70,8 +70,8 @@ while(manche_en_cours==1){
           listejoueur[j].score_manche=0; //il gagne aucun point durant cette manche
         }
         else{
-          ajouter_carte(listejoueur, carte_pioche);
-          tri_main(listejoueur[j].main,listejoueur[j].taille_main);
+          ajouter_carte(&listejoueur[j], carte_pioche);
+          tri_main(&listejoueur[j].main,&listejoueur[j].taille_main);
         }
       }
     }
