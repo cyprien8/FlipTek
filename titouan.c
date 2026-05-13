@@ -40,7 +40,7 @@ int recherche_dichotomique_main(Carte* tab, int debut, int fin, Carte carte){ //
 
 
 
-void jouer_manche(Joueur* listejoueur, int nbjoueurs, Pioche ppioche){
+void jouer_manche(Joueur* listejoueur, int nbjoueurs, Pioche *pioche){
 int manche_en_cours=1;
 while(manche_en_cours==1){
   //for(int i=0;i<nbjoueurs;i++){ initialisation des parametre, on parcourt les joueurs
@@ -59,7 +59,7 @@ while(manche_en_cours==1){
         listejoueur[0].est_actif=0; //si il s'arrete il devient inactif
       }
       else if(jeu=='P'){
-        carte_pioche=carte_dessus(ppioche);//sinon on retourne une carte de la pioche
+        carte_pioche=carte_dessus(pioche);//sinon on retourne une carte de la pioche
         affiche_carte(carte_pioche); //affichage de la carte
         n=recherche_dichotomique_main(listejoueur[0].main,0,nbjoueurs,carte_pioche); 
         if(n==1){
