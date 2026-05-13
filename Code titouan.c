@@ -92,22 +92,16 @@ int score_manche=0;
 
 
 
-void triInsertion(int* main, int taille_main) {
+void tri_main(int* main, int taille_main) {
     int i, j, cle;
-    for (i = 1; i < n; i++) {
-        cle = T[i];    // On extrait l'élément à placer (la carte qu'on a en main)
-        j = i - 1;     // On commence à comparer avec l'élément juste à gauche
-
-        /* On décale les éléments de la partie triée vers la droite 
-           tant qu'ils sont plus grands que la 'cle'
-        */
-        while (j >= 0 && T[j] > cle) {
-            T[j + 1] = T[j]; // Le décalage vers la droite
-            j = j - 1;       // On passe à l'élément suivant vers la gauche
+    for (i = 1; i < taille_main; i++) {
+        cle = main[i];   
+        j = i - 1;    
+        while (j >= 0 && main[j] > cle) {
+            main[j + 1] = main[j]; 
+            j = j - 1;     
         }
-        
-        // On insère la 'cle' à sa place finale (juste après l'élément plus petit)
-        T[j + 1] = cle; 
+        main[j + 1] = cle; 
     }
 }
 
