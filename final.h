@@ -43,3 +43,4 @@ Carte carte_dessus(Pioche *pioche);
 int arret_manche(Joueur *listejoueur, int nbjoueurs);
 int somme_main(Joueur* j);
 int recherche_dichotomique_main(int* tab, int debut, int fin, Carte carte);
+void tri_main(int* main, int taille_main);
