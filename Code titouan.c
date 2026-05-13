@@ -80,7 +80,7 @@ for(int i=0;i<nbjoueurs;i++){
       listejoueur[i].score_manche+=15;  //bonus de +15
     }
   }
-} //enfin fini je peux aller me branler!
+} 
 
 
 
