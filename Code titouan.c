@@ -105,7 +105,16 @@ void tri_main(Carte* main, int taille_main) {
     }
 }
 
+//*int tour(Joueur* jeu_joueur, int nbjoueurs, ){
+  if(nbjoueurs==0){
+    return 0;
+  }
+  ajouter_carte(jeu_joueur[0],)
+  //Appel de la fonction piocher du premier joueur(tab[0])
 
+  return tour(jeu_joueur+1,nbjoueurs-1);*//
+    
+}
 
 
 
