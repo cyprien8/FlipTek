@@ -37,18 +37,18 @@ ajouter_carte(tab[0], Carte c)
   return tour(tab+1,nbjoueurs-1);
 
 
-int recherche_dichotomique_main(int* tab, int debut, int fin, int carte){ //recherche si la carte est deja dans la main a condition que la main soit trié
+int recherche_dichotomique_main(int* tab, int debut, int fin, Carte carte){ //recherche si la carte est deja dans la main a condition que la main soit trié
   if(debut>fin){
     return NULL;
   }
   int millieu=(fin+debut)/2;
-  if(tab[millieu]==carte){
+  if(tab[millieu]==carte.valeur){
     return 1;
   }
-  if(tab[millieu]>carte){
+  if(tab[millieu]>carte.valeur){
     return recherche_dichotomique_main(tab+1,millieu+1,fin,carte);
   }
-  if(tab[millieu]<carte){
+  if(tab[millieu]<carte.valeur){
     return recherche_dichotomique_main(tab+1,debut,millieu-1,carte);
   }
 }
