@@ -92,7 +92,7 @@ int score_manche=0;
 
 
 
-void tri_main(int* main, int taille_main) {
+void tri_main(Carte* main, int taille_main) {
     int i, j, cle;
     for (i = 1; i < taille_main; i++) {
         cle = main[i];   
