@@ -1,8 +1,10 @@
 #include "final.h"
 //Com test
-void vider_main(Joueur *j){ // fonction pour enlever toutes les cartes d'un joueur en fin de manche 
-     j->taille_main=0;
- }
+void vider_main(Joueur *listejoueur, int nbjoueurs){ // fonction pour enlever toutes les cartes d'un joueur en fin de manche 
+     for(int i=0; i<nbjoueurs; i++){
+          listejoueur[i]->taille_main=0;
+     }
+}
  
 void ajouter_carte(Joueur *j, Carte c){ // fonction pour ajouter une carte a la main d'un joueur 
      if (j->taille_main<7){
