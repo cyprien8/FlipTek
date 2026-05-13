@@ -24,6 +24,7 @@ int main(){
   }
   
   pioche_base(ppioche); //appel de la fonction pour initialise la pioche
+  
   melange_pioche(ppioche); //appel de la fonction pour mélanger la pioche
 
   // lancement de la partie/1ere manche
