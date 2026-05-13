@@ -1,7 +1,7 @@
- #include<stdio.h>
- #include<stdlib.h>
- #include<string.h>
- #include<time.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<time.h>
 
 
 #define CARTE_X2      1
@@ -10,7 +10,7 @@
 #define CARTE_PLUS_6  4
 #define CARTE_PLUS_8  5
 #define CARTE_PLUS_10 6
-#define TAILLE_PIOCHE 86
+#define TAILLE_PIOCHE 85
 
 
  typedef struct{
@@ -36,11 +36,16 @@ typedef struct {
 void vider_main(Joueur *j);
 void affiche_carte( Carte c);
 void ajouter_carte(Joueur *j, Carte c);
-void   def_carte(Carte *carte, int valeur, char *id);
+void   def_carte(Carte *carte, int valeur, char *label);
 void   pioche_base(Pioche *pioche);
 void   melange_pioche(Pioche *pioche);
 Carte carte_dessus(Pioche *pioche);
 int arret_manche(Joueur *listejoueur, int nbjoueurs);
-int somme_main(Joueur* j);
-int recherche_dichotomique_main(int* tab, int debut, int fin, Carte carte);
+int somme_main(Joueur * j);
+int recherche_dichotomique_main(Carte* tab, int debut, int fin, Carte carte);
 void tri_main(Carte* main, int taille_main);
+
+
+
+
+

@@ -1,10 +1,9 @@
 #include "final.h"
 
 
-
-
 int main(){
   Pioche p;
+  Pioche *ppioche=&p;
   int nbjoueurs;
   do{
   printf("Quel est le nombre de joueurs ?");
@@ -24,24 +23,22 @@ int main(){
     listejoueur[i].score_total=0;
   }
   
-  // lancement de la partie/1ere manche
-  
-  pioche_base(p); //appel de la fonction pour initialise la pioche
-  melange_pioche(p); //appel de la fonction pour mélanger la pioche
+  pioche_base(ppioche); //appel de la fonction pour initialise la pioche
+  melange_pioche(ppioche); //appel de la fonction pour mélanger la pioche
 
-  
+  // lancement de la partie/1ere manche
 
 int manche_en_cours=1;
 while(manche_en_cours==1){
   //for(int i=0;i<nbjoueurs;i++){ initialisation des parametre, on parcourt les joueurs
-    vider_main(listejoueur[0]);
+    vider_main(listejoueur);
     listejoueur[0].est_actif=1;
     listejoueur[0].score_manche=0;
 
     //debut de la manche 
     char jeu;
     int n;
-    Carte carte_pioché;
+    Carte carte_pioche;
     if(listejoueur[0].est_actif==1){ //est ce que le joueur est toujours dans le jeu
       printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher");
       scanf("%c",&jeu);
@@ -49,16 +46,16 @@ while(manche_en_cours==1){
         listejoueur[0].est_actif=0; //si il s'arrete il devient inactif
       }
       else if(jeu=='P'){
-        carte_pioché=carte_dessus(p);//sinon on retourne une carte de la pioche
-        affiche_carte(carte_pioché); //affichage de la carte
-        n=recherche_dichotomique_main(listejoueur,0,nbjoueurs,carte_pioché); 
+        carte_pioche=carte_dessus(ppioche);//sinon on retourne une carte de la pioche
+        affiche_carte(carte_pioche); //affichage de la carte
+        n=recherche_dichotomique_main(listejoueur[0].main,0,nbjoueurs,carte_pioche); 
         if(n==1){
           printf("La carte pioché est deja dans la main");
           listejoueur[0].est_actif=0; //devient inactif
           listejoueur[0].score_manche=0; //il gagne aucun point durant cette manche
         }
         else{
-          ajouter_carte(liste_joueur[0], carte_pioché);
+          ajouter_carte(listejoueur, carte_pioche);
           tri_main(listejoueur[0].main,listejoueur[0].taille_main);
         }
       }
@@ -74,9 +71,8 @@ while(manche_en_cours==1){
         printf("Continuation de la manche");
       }
   }
-  listejoueur[0].score_manche=somme_main(listejoueur[0]);
+  listejoueur[0].score_manche=somme_main(listejoueur);
     
   free(listejoueur);
   return 0;
 }
-
