@@ -54,6 +54,7 @@ int main(){
       }
       else if(jeu=='P'){
         
+        
       
       
   
