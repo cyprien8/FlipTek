@@ -46,6 +46,7 @@ int main(){
     //debut de la manche 
     char jeu;
     int n;
+    Carte carte_pioché;
     if(listejoueur[0].est_actif==0){ //est ce que le joueur est toujours dans le jeu
       printf("Ecrire 'A' si tu souhaites t'arreter et 'P' si tu souhaites piocher");
       scanf("%c",&jeu);
@@ -53,6 +54,19 @@ int main(){
         listejoueur[0].est_actif=0; //si il s'arrete il devient inactif
       }
       else if(jeu=='P'){
+        carte_pioché=carte_dessus(p);//sinon on retourne une carte de la pioche
+        affiche_carte(carte_pioché); //affichage de la carte
+        n=recherche_dichotomique_main(listejoueur,0,nbjoueurs,carte_pioché); 
+        if(n==1){
+          printf("La carte pioché est deja dans la main");
+          listejoueur[0].est_actif=0; //devient inactif
+          listejoueur[0].score_manche=0; //il gagne aucun point durant cette manche
+        }
+        else{
+          ajouter_carte(liste_joueur[0], carte_pioché);
+          
+        }
+        
         
         
       
