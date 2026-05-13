@@ -63,7 +63,7 @@ while(manche_en_cours==1){
       else if(jeu=='P'){
         carte_pioche=carte_dessus(pioche);//sinon on retourne une carte de la pioche
         affiche_carte(carte_pioche); //affichage de la carte
-        n=recherche_dichotomique_main(listejoueur[j].main,0,nbjoueurs,carte_pioche); 
+        n=recherche_dichotomique_main(listejoueur[j].main,0,listejoueur[j].taille_main,carte_pioche); 
         if(n==1){
           printf("La carte pioché est deja dans la main");
           listejoueur[j].est_actif=0; //devient inactif
@@ -86,7 +86,10 @@ while(manche_en_cours==1){
         printf("Continuation de la manche");
       }
   
-  	listejoueur[j].score_manche=somme_main(listejoueur);
+  	
 	}
 }
+	for(int g=0; g<nbjoueurs; g++){
+	listejoueur[g].score_manche=somme_main(listejoueur);
+	}
 }
