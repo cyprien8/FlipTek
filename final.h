@@ -33,12 +33,13 @@ typedef struct {
     int   reste; // nombre de cartes restantes dans la pioche
 } Pioche;
 
-void vider_main(Joueur *j)
-void affiche_carte( Carte c)
-void ajouter_carte(Joueur *j, Carte c)
+void vider_main(Joueur *j);
+void affiche_carte( Carte c);
+void ajouter_carte(Joueur *j, Carte c);
 void   def_carte(Carte *carte, int valeur, char *id);
 void   pioche_base(Pioche *pioche);
 void   melange_pioche(Pioche *pioche);
 Carte carte_dessus(Pioche *pioche);
 int arret_manche(Joueur *listejoueur, int nbjoueurs);
 int somme_main(Joueur* j);
+int recherche_dichotomique_main(int* tab, int debut, int fin, Carte carte);
