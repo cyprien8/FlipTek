@@ -55,5 +55,5 @@ int arret_manche(Joueur *listejoueur, int nbjoueurs){
             return 1; // un joueur encore actif, on continue
         }
     }
-    return 0; // plus personne d'actif, la manche s'arrête
+    return 2; // plus personne d'actif, la manche s'arrête
 }
