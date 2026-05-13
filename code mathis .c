@@ -1,4 +1,4 @@
-#include "mon_prog.h"
+#include "final.h"
 
 void def_carte(Carte *carte, int valeur, char *label) { //creer une carte
     carte->valeur= valeur;
