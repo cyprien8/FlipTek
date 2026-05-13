@@ -46,14 +46,14 @@ int arret_manche(Joueur *listejoueur, int nbjoueurs){
     // Condition 1 : un joueur a 7 cartes
     for(int i=0 ; i<nbjoueurs ; i++){
         if(listejoueur[i].taille_main==7 && joueurs[i].est_actif==1){
-            return 1;
+            return 0;
         }
     }
     // Condition 2 : tous les joueurs sont inactifs
     for(int i=0 ; i<nbjoueurs ; i++){
         if(listejoueur[i].est_actif == 1){
-            return 0; // un joueur encore actif, on continue
+            return 1; // un joueur encore actif, on continue
         }
     }
-    return 1; // plus personne d'actif, la manche s'arrête
+    return 0; // plus personne d'actif, la manche s'arrête
 }
