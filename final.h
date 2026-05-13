@@ -41,3 +41,4 @@ void   pioche_base(Pioche *pioche);
 void   melange_pioche(Pioche *pioche);
 Carte carte_dessus(Pioche *pioche);
 int arret_manche(Joueur *listejoueur, int nbjoueurs);
+int somme_main(Joueur* j);
