@@ -128,10 +128,6 @@ void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) {
 }
 
 
-void vider_buffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
 
 
 
