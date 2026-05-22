@@ -57,7 +57,7 @@ int calculer_score_manche(Joueur *j) {
     int points = 0;
     int multiplicateur_x2 = 0;
 
-    // Si le joueur a été éliminé par un doublon, il marque 0 point
+    // Si le joueur a été éliminé par un doublon, il marque 0 point le -1 sert a reconnaitre facilement un joueur perdant
     if (j->score_manche == -1) {
         return 0;
     }
