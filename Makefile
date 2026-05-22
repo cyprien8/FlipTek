@@ -1,19 +1,19 @@
 all : exec
 
-main.o: main.c final.h
+main.o: main.c projet.h
 	gcc -c main.c -o main.o
 	
-mathis.o: mathis.c final.h
-	gcc -c mathis.c -o mathis.o
+carte_et_pioche.o: carte_et_pioche.c projet.h
+	gcc -c carte_et_pioche.c -o carte_et_pioche.o
 	
-titouan.o: titouan.c final.h
-	gcc -c titouan.c -o titouan.o
+deroulement_jeu.o: deroulement_jeu.c projet.h
+	gcc -c deroulement_jeu.c -o deroulement_jeu.o
 	
-cyprien.o: cyprien.c final.h
-	gcc -c cyprien.c -o cyprien.o
+joueur_et_main.o: joueur_et_main.c projet.h
+	gcc -c joueur_et_main.c -o joueur_et_main.o
 
-exec: main.o mathis.o titouan.o cyprien.o
-	gcc main.o mathis.o titouan.o cyprien.o -o exec	
+exec: main.o carte_et_pioche.o deroulement_jeu.o joueur_et_main.o
+	gcc main.o carte_et_pioche.o deroulement_jeu.o joueur_et_main.o -o exec	
 	
 
 clean: 
