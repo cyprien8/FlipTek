@@ -1,4 +1,4 @@
-#include "final.h"
+#include "projet.h.h"
 
 void vider_mains(Joueur *listejoueur, int nbjoueurs) {
     for (int i = 0; i < nbjoueurs; i++) {
