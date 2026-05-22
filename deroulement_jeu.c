@@ -1,11 +1,11 @@
 
 #include "projet.h"
 
-void vider_buffer() {
+void vider_buffer() { // permet d'eviter quand on tape plusieurs lettre au moment ou le programme nous demande quelque chose de faire bugger le programme
     int c;
-    while ((c = getchar()) != '\n' && c != EOF);
+    while ((c = getchar()) != '\n' && c != EOF); // IA
 }
-int arret_manche(Joueur *listejoueur, int nbjoueurs) {
+int arret_manche(Joueur *listejoueur, int nbjoueurs) { // fonction qui retourne en fonction de certaine condition si on doit continuer de jouer ou pas 
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].est_actif == 1) {
             return 0; // Quelqu'un gagne la manche avec 7 cartes donc on arrete
@@ -22,7 +22,7 @@ int arret_manche(Joueur *listejoueur, int nbjoueurs) {
 
 
 
-void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
+void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonction permettant de simuler une manche entière
     int status_manche = 1;
     vider_mains(listejoueur, nbjoueurs);
     Carte carte_pioche;
@@ -102,7 +102,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
     }
 }
 
-void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) { // sauvergarde sur un fichier txt les scores totaux 
+void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) { // sauvergarde sur un fichier .txt les scores totaux 
     char nom_fichier[150];
     printf("\nEntrez le nom du fichier pour sauvegarder les scores (ex: scores.txt) : ");
     scanf("%s", nom_fichier);
