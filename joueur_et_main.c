@@ -1,6 +1,6 @@
 #include "projet.h"
 
-void vider_mains(Joueur *listejoueur, int nbjoueurs) { // parcours le tableau de joueur pour vider tout ce qu'il y a dedans 
+void vider_mains(Joueur *listejoueur, int nbjoueurs) {
     for (int i = 0; i < nbjoueurs; i++) {
         listejoueur[i].taille_main = 0; 
         listejoueur[i].score_manche = 0;
@@ -8,7 +8,7 @@ void vider_mains(Joueur *listejoueur, int nbjoueurs) { // parcours le tableau de
     }
 }
 
-void ajouter_carte(Joueur *j, Carte c) { // ajoute une carte a la main d'un joueur
+void ajouter_carte(Joueur *j, Carte c) {
     if (j->taille_main < 7) {
         j->main[j->taille_main] = c;
         j->taille_main++;
@@ -32,7 +32,7 @@ void tri_main(Carte *main, int taille_main) {// tri par insertion
 
 
 
-int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) { // recherche si une carte special est dans la main d'un joueur pour voir si il y a des doublons
+int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) {
     if (carte.est_bonus) {
         return 0; // carte bonus ne peuvent pas etre en doublon
     }
@@ -53,25 +53,23 @@ int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) { /
 
 
 
-int calculer_score_manche(Joueur *j) { 
+int calculer_score_manche(Joueur *j) {
     int points = 0;
     int multiplicateur_x2 = 0;
 
-    // Si le joueur a été éliminé par un doublon, il marque 0 point le -1 sert a reconnaitre facilement un joueur perdant
+    // Si le joueur a été éliminé par un doublon, il marque 0 point
     if (j->score_manche == -1) {
         return 0;
     }
 
     // Premier passage : On additionne cartes numériques et bonus d'addition
     for (int i = 0; i < j->taille_main; i++) {
-        if (j->main[i].est_bonus==0) {
+        if (!j->main[i].est_bonus) {
             points += j->main[i].valeur;
-        }
-        else {
+        } else {
             if (j->main[i].type_bonus == BONUS_X2) {
                 multiplicateur_x2++;
-            } 
-            else {
+            } else {
                 points += j->main[i].valeur; 
             }
         }
@@ -84,4 +82,3 @@ int calculer_score_manche(Joueur *j) {
 
     return points;
 }
-
