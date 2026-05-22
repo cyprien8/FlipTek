@@ -1,4 +1,4 @@
-#include "final.h"
+#include "projet.h"
 
 
 void def_carte(Carte *carte, int valeur, char *label, int est_bonus, int type_bonus) {
