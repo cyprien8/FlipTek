@@ -74,7 +74,7 @@ void affiche_carte(Carte c) { // affiche la carte de manuière esthetique
         printf("-------\n");
         printf("\033[0m"); 
     } else {
-        printf("\033[37m"); // Blanc pour les normales
+        printf("\033[32m"); // Blanc pour les normales
         printf("-------\n");
         printf("|      |\n");
         printf("|%3s   |\n", c.label);
