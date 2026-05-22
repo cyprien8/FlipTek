@@ -21,7 +21,6 @@ void pioche_base(Pioche *pioche) {
             nbExemplaire_carte = numero_carte; 
         }
 
-        // CORRECTION : Décommenté et activé pour générer le texte de la carte
         sprintf(label, "%d", numero_carte);
 
         for (int c = 0; c < nbExemplaire_carte; c++) {
@@ -38,7 +37,6 @@ void pioche_base(Pioche *pioche) {
     def_carte(&(pioche->cartes[index++]), 8, "+8", 1, BONUS_PLUS_8);
     def_carte(&(pioche->cartes[index++]), 10, "+10", 1, BONUS_PLUS_10);
 
-    // Vérification de sécurité
     if (index != TAILLE_PIOCHE) {
         printf("erreur : %d cartes initialisees au lieu de %d\n", index, TAILLE_PIOCHE);
         exit(2);
@@ -47,7 +45,6 @@ void pioche_base(Pioche *pioche) {
 }
 
 void melange_pioche(Pioche *pioche) {
-    // Le srand() a été déplacé dans le main pour éviter de réinitialiser le générateur à chaque manche
     for (int i = TAILLE_PIOCHE- 1; i > 0; i--) {
         int j = rand() % (i + 1);
         Carte temporaire = pioche->cartes[i];
@@ -72,7 +69,7 @@ void affiche_carte(Carte c) {
         printf("\033[33m"); // Jaune pour les bonus
         printf("-------\n");
         printf("|     |\n");
-        printf("|  %3s  |\n", c.label); // %3s pour caler proprement le texte
+        printf("|  %3s  |\n", c.label); // %3s pour caler  le texte bien
         printf("|     |\n");
         printf("-------\n");
         printf("\033[0m"); 
