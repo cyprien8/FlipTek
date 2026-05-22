@@ -84,11 +84,9 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
             status_manche = arret_manche(listejoueur, nbjoueurs);
         }
     }
-
-    // Fin de la manche 
+ 
     printf("\n--- FIN DE LA MANCHE ---\n");
     
-    // Si la manche s'est arrêtée car un joueur a réussi à obtenir 7 cartes différentes
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].score_manche != -1) {
             printf("\033[32mFelicitations a %s qui a collecte 7 cartes ! Bonus de +15 points !\033[0m\n", listejoueur[i].nom);
@@ -96,7 +94,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
         }
     }
 
-    // Calcul et mise à jour des scores totaux de chaque joueur
+    // Calcul des scores totaux de chaque joueur
     for (int g = 0; g < nbjoueurs; g++) {
         int pts = calculer_score_manche(&listejoueur[g]);
         listejoueur[g].score_total += pts;
@@ -104,7 +102,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
     }
 }
 
-void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) {
+void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) { // sauvergarde sur un fichier txt les scores totaux 
     char nom_fichier[150];
     printf("\nEntrez le nom du fichier pour sauvegarder les scores (ex: scores.txt) : ");
     scanf("%s", nom_fichier);
