@@ -69,7 +69,7 @@ void affiche_carte(Carte c) {
         printf("\033[33m"); // Jaune pour les bonus
         printf("-------\n");
         printf("|      |\n");
-        printf("|  %3s |\n", c.label); // %3s pour caler  le texte bien
+        printf("|%3s   |\n", c.label); // %3s pour caler  le texte bien
         printf("|      |\n");
         printf("-------\n");
         printf("\033[0m"); 
@@ -77,7 +77,7 @@ void affiche_carte(Carte c) {
         printf("\033[37m"); // Blanc pour les normales
         printf("-------\n");
         printf("|      |\n");
-        printf("|  %3s |\n", c.label);
+        printf("|%3s   |\n", c.label);
         printf("|      |\n");
         printf("-------\n");
         printf("\033[0m"); 
