@@ -1,20 +1,21 @@
 
 #include "projet.h"
 
-void vider_buffer() { // permet d'eviter quand on tape plusieurs lettre au moment ou le programme nous demande quelque chose de faire bugger le programme
+void vider_buffer() {
     int c;
-    while ((c = getchar()) != '\n' && c != EOF); // IA
+    while ((c = getchar()) != '\n' && c != EOF);
 }
-int arret_manche(Joueur *listejoueur, int nbjoueurs) { // fonction qui retourne en fonction de certaine condition si on doit continuer de jouer ou pas 
+int arret_manche(Joueur *listejoueur, int nbjoueurs) {
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].est_actif == 1) {
-            return 0; // Quelqu'un gagne la manche avec 7 cartes donc on arrete
+            return 0; // Quelqu'un gagne la manche avec 7 cartes
         }
     }
     
+    // Condition 2 : Reste-t-il au moins un joueur actif ?
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].est_actif == 1) {
-            return 1; //la manche continue si il y a au moins un joueur qui est actif
+            return 1; //la manche continue
         }
     }
     return 2; // tout le monde s'est arrété
@@ -22,7 +23,7 @@ int arret_manche(Joueur *listejoueur, int nbjoueurs) { // fonction qui retourne 
 
 
 
-void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonction permettant de simuler une manche entière
+void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
     int status_manche = 1;
     vider_mains(listejoueur, nbjoueurs);
     Carte carte_pioche;
@@ -33,7 +34,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonct
 
     while (status_manche == 1 && pioche->reste > 0) {
         for (int j = 0; j < nbjoueurs; j++) {
-            // On revérifie l'état de la manche après chaque tour de chaque joueur
+            // On revérifie l'état de la manche après chaque tour individuel
             status_manche = arret_manche(listejoueur, nbjoueurs);
             if (status_manche != 1 || pioche->reste <= 0){ 
                 break;// permet de sortir de la boucle sans sortir du programme tout entier
@@ -84,9 +85,11 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonct
             status_manche = arret_manche(listejoueur, nbjoueurs);
         }
     }
- 
+
+    // Fin de la manche 
     printf("\n--- FIN DE LA MANCHE ---\n");
     
+    // Si la manche s'est arrêtée car un joueur a réussi à obtenir 7 cartes différentes
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].score_manche != -1) {
             printf("\033[32mFelicitations a %s qui a collecte 7 cartes ! Bonus de +15 points !\033[0m\n", listejoueur[i].nom);
@@ -94,7 +97,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonct
         }
     }
 
-    // Calcul des scores totaux de chaque joueur
+    // Calcul et mise à jour des scores totaux de chaque joueur
     for (int g = 0; g < nbjoueurs; g++) {
         int pts = calculer_score_manche(&listejoueur[g]);
         listejoueur[g].score_total += pts;
@@ -102,7 +105,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonct
     }
 }
 
-void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) { // sauvergarde sur un fichier .txt les scores totaux 
+void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) {
     char nom_fichier[150];
     printf("\nEntrez le nom du fichier pour sauvegarder les scores (ex: scores.txt) : ");
     scanf("%s", nom_fichier);
@@ -127,8 +130,7 @@ void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) { // sauvergarde sur
 
 
 
-
-void rappeler_regles() { // aide de l' IA pour les couleurs
+void rappeler_regles() {
     printf("\n\033[36m==================================================================\033[0m\n");
     printf("\033[1;36m                     REGLES DU JEU : FLIPTECH                     \033[0m\n");
     printf("\033[36m==================================================================\033[0m\n");
