@@ -33,7 +33,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) { // fonct
 
     while (status_manche == 1 && pioche->reste > 0) {
         for (int j = 0; j < nbjoueurs; j++) {
-            // On revérifie l'état de la manche après chaque tour individuel
+            // On revérifie l'état de la manche après chaque tour de chaque joueur
             status_manche = arret_manche(listejoueur, nbjoueurs);
             if (status_manche != 1 || pioche->reste <= 0){ 
                 break;// permet de sortir de la boucle sans sortir du programme tout entier
