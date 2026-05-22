@@ -140,29 +140,29 @@ void rappeler_regles() {
     printf("\033[1;36m                     REGLES DU JEU : FLIPTECH                     \033[0m\n");
     printf("\033[36m==================================================================\033[0m\n");
     printf("\n\033[1m1. BUT DU JEU :\033[0m\n");
-    printf("   Avoir le plus de points possible en accumulant des cartes[cite: 14, 74].\n");
-    printf("   Les cartes numeros rapportent leur valeur (ex: un 8 vaut 8 points)[cite: 75].\n");
-    printf("   Les cartes bonus modifient votre score (x2, +2, +4, +6, +8, +10)[cite: 76].\n");
+    printf("   Avoir le plus de points possible en accumulant des cartes.\n");
+    printf("   Les cartes numeros rapportent leur valeur (ex: un 8 vaut 8 points).\n");
+    printf("   Les cartes bonus modifient votre score (x2, +2, +4, +6, +8, +10).\n");
     
     printf("\n\033[1m2. LA PIOCHE (85 cartes) :\033[0m\n");
-    printf("   79 cartes numérotées de 0 à 12 (ex: 1 carte '0', 1 carte '1', 2 '2', ..., 12 '12')[cite: 58, 59, 60, 61, 62, 64].\n");
-    printf("   6 cartes bonus uniques[cite: 65].\n");
+    printf("   79 cartes numérotées de 0 à 12 (ex: 1 carte '0', 1 carte '1', 2 '2', ..., 12 '12').\n");
+    printf("   6 cartes bonus uniques.\n");
 
     printf("\n\033[1m3. DEROULEMENT D'UN TOUR :\033[0m\n");
-    printf("   A votre tour, vous avez deux choix[cite: 78]:\n");
-    printf("   \033[32m[P] Piocher\033[0m : Vous tirez une carte de la pioche[cite: 78].\n");
-    printf("     - Si c'est un numéro que vous n'avez pas, il s'ajoute à votre main[cite: 80].\n");
-    printf("     - Si c'est un bonus, il boostera vos points en fin de manche[cite: 81].\n");
-    printf("     - \033[31mSi c'est un numéro que vous possédez DEJA, vous perdez TOUT (0 pt) !\033[0m [cite: 82]\n");
-    printf("   \033[33m[A] S'arreter\033[0m : Vous validez vos points actuels et quittez la manche[cite: 78].\n");
+    printf("   A votre tour, vous avez deux choix:\n");
+    printf("   \033[32m[P] Piocher\033[0m : Vous tirez une carte de la pioche.\n");
+    printf("     - Si c'est un numéro que vous n'avez pas, il s'ajoute à votre main.\n");
+    printf("     - Si c'est un bonus, il boostera vos points en fin de manche.\n");
+    printf("     - \033[31mSi c'est un numéro que vous possédez DEJA, vous perdez TOUT (0 pt) !\033[0m \n");
+    printf("   \033[33m[A] S'arreter\033[0m : Vous validez vos points actuels et quittez la manche.\n");
 
     printf("\n\033[1m4. FIN D'UNE MANCHE :\033[0m\n");
-    printf("   La manche s'arrete si tout le monde s'est arrete ou a perdu[cite: 85].\n");
+    printf("   La manche s'arrete si tout le monde s'est arrete ou a perdu.\n");
     printf("   \033[32mBONUS SPECIAL :\033[0m Si vous atteignez 7 cartes différentes en main, la manche\n");
-    printf("   s'arrete immédiatement et vous gagnez \033[1;32m+15 points de bonus\033[0m[cite: 83, 84]!\n");
+    printf("   s'arrete immédiatement et vous gagnez \033[1;32m+15 points de bonus\033[0m!\n");
     
     printf("\n\033[1m5. FIN DE LA PARTIE :\033[0m\n");
-    printf("   Dès qu'un joueur atteint ou dépasse \033[1;31m200 points\033[0m, la partie s'arrete[cite: 90].\n");
+    printf("   Dès qu'un joueur atteint ou dépasse \033[1;31m200 points\033[0m, la partie s'arrete.\n");
     printf("\033[36m==================================================================\033[0m\n\n");
     
     printf("Appuyez sur Entree pour lancer la partie...");
