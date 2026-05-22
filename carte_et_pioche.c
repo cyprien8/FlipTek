@@ -1,7 +1,7 @@
 #include "projet.h"
 
 
-void def_carte(Carte *carte, int valeur, char *label, int est_bonus, int type_bonus) {
+void def_carte(Carte *carte, int valeur, char *label, int est_bonus, int type_bonus) { // definit une carte avec un nom, une valeur et son aspect bonus
     carte->valeur = valeur;
     strcpy(carte->label, label);
     carte->est_bonus = est_bonus;
@@ -44,7 +44,7 @@ void pioche_base(Pioche *pioche) {
     pioche->reste = TAILLE_PIOCHE;
 }
 
-void melange_pioche(Pioche *pioche) { // mélange à l'aide d'unne variable temporaire
+void melange_pioche(Pioche *pioche) { // mélange la pioche à l'aide d'une variable temporaire
     for (int i = TAILLE_PIOCHE- 1; i > 0; i--) {
         int j = rand() % (i + 1);
         Carte temporaire = pioche->cartes[i];
@@ -54,17 +54,17 @@ void melange_pioche(Pioche *pioche) { // mélange à l'aide d'unne variable temp
 }
 
 
-Carte carte_dessus(Pioche *pioche) {
+Carte carte_dessus(Pioche *pioche) { // permet quand un joueur pioche de savoir quelle carte on pioche en fonction du tableau.
     if (pioche->reste <= 0) {
         // Retourne une carte fictive vide si la pioche s'épuise en cours de route
         Carte vide = {0, "VIDE", 0, BONUS_AUCUN};
         return vide;
     }
-    pioche->reste--;
+    pioche->reste--; // decremente dans le tableau pour ne pas piocher a chaque fois la meme carte
     return pioche->cartes[pioche->reste];
 }
 
-void affiche_carte(Carte c) {
+void affiche_carte(Carte c) { // affiche la carte de manuière esthetique
     if (c.est_bonus == 1) {
         printf("\033[33m"); // Jaune pour les bonus
         printf("-------\n");
