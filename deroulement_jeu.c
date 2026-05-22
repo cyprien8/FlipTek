@@ -128,7 +128,7 @@ void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs) { // sauvergarde sur
 
 
 
-void rappeler_regles() {
+void rappeler_regles() { // aide de l' IA pour les couleurs
     printf("\n\033[36m==================================================================\033[0m\n");
     printf("\033[1;36m                     REGLES DU JEU : FLIPTECH                     \033[0m\n");
     printf("\033[36m==================================================================\033[0m\n");
