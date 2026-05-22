@@ -8,14 +8,13 @@ void vider_buffer() {
 int arret_manche(Joueur *listejoueur, int nbjoueurs) {
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].est_actif == 1) {
-            return 0; // Quelqu'un gagne la manche avec 7 cartes
+            return 0; // Quelqu'un gagne la manche avec 7 cartes donc on arrete
         }
     }
     
-    // Condition 2 : Reste-t-il au moins un joueur actif ?
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].est_actif == 1) {
-            return 1; //la manche continue
+            return 1; //la manche continue si il y a au moins un joueur qui est actif
         }
     }
     return 2; // tout le monde s'est arrété
