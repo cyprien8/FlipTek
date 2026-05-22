@@ -33,7 +33,7 @@ do{
   if (nbjoueurs <= 0) {
         printf("Nombre de joueurs invalide.Veuillez mettre un nombre superieur à 0.\n");
     }
-  }while(nbjoueurs<=0); 
+  }while(nbjoueurs<=0 && nbjoueurs>=86); 
     
     
     Joueur *listejoueur = malloc(nbjoueurs * sizeof(Joueur)); // crée le tableau de joueur en fonction du nombre donné
