@@ -49,7 +49,7 @@ void melange_pioche(Pioche *pioche) {
         int j = rand() % (i + 1);
         Carte temporaire = pioche->cartes[i];
         pioche->cartes[i] = pioche->cartes[j];
-        pioche->cartes[j] = temporaire; // CORRECTION : Échange de cartes complété
+        pioche->cartes[j] = temporaire; //
     }
 }
 
