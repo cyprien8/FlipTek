@@ -1,6 +1,6 @@
 #include "projet.h"
 
-void vider_mains(Joueur *listejoueur, int nbjoueurs) {
+void vider_mains(Joueur *listejoueur, int nbjoueurs) { // parcours le tableau de joueur pour vider tout ce qu'il y a dedans 
     for (int i = 0; i < nbjoueurs; i++) {
         listejoueur[i].taille_main = 0; 
         listejoueur[i].score_manche = 0;
@@ -8,7 +8,7 @@ void vider_mains(Joueur *listejoueur, int nbjoueurs) {
     }
 }
 
-void ajouter_carte(Joueur *j, Carte c) {
+void ajouter_carte(Joueur *j, Carte c) { // ajoute une carte a la main d'un joueur
     if (j->taille_main < 7) {
         j->main[j->taille_main] = c;
         j->taille_main++;
@@ -32,7 +32,7 @@ void tri_main(Carte *main, int taille_main) {// tri par insertion
 
 
 
-int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) {
+int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) { // recherche si une carte special est dans la main d'un joueur pour voir si il y a des doublons
     if (carte.est_bonus) {
         return 0; // carte bonus ne peuvent pas etre en doublon
     }
@@ -53,7 +53,7 @@ int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) {
 
 
 
-int calculer_score_manche(Joueur *j) {
+int calculer_score_manche(Joueur *j) { 
     int points = 0;
     int multiplicateur_x2 = 0;
 
