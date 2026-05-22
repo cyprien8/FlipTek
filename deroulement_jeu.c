@@ -1,3 +1,6 @@
+
+#include "projet.h"
+
 int arret_manche(Joueur *listejoueur, int nbjoueurs) {
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].est_actif == 1) {
