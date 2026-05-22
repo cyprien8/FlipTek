@@ -64,12 +64,14 @@ int calculer_score_manche(Joueur *j) {
 
     // Premier passage : On additionne cartes numériques et bonus d'addition
     for (int i = 0; i < j->taille_main; i++) {
-        if (!j->main[i].est_bonus) {
+        if (j->main[i].est_bonus==0) {
             points += j->main[i].valeur;
-        } else {
+        }
+        else {
             if (j->main[i].type_bonus == BONUS_X2) {
                 multiplicateur_x2++;
-            } else {
+            } 
+            else {
                 points += j->main[i].valeur; 
             }
         }
