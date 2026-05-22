@@ -37,7 +37,7 @@ void pioche_base(Pioche *pioche) {
     def_carte(&(pioche->cartes[index++]), 8, "+8", 1, BONUS_PLUS_8);
     def_carte(&(pioche->cartes[index++]), 10, "+10", 1, BONUS_PLUS_10);
 
-    if (index != TAILLE_PIOCHE) {
+    if (index != TAILLE_PIOCHE) { // si jamais l'indice du tableau n'est pas le même que la taille de la pioche totale il y a une erreur
         printf("erreur : %d cartes initialisees au lieu de %d\n", index, TAILLE_PIOCHE);
         exit(2);
     }
