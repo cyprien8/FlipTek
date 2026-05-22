@@ -10,7 +10,7 @@ int main() {
     do {
         printf("Voulez-vous un rappel des regles ? (Veuillez repondre par O pour oui ou N pour non. ) : ");
         scanf(" %c", &reponse_regles);
-        vider_buffer();
+        vider_buffer(); // evite les erreurs
 
         if (reponse_regles == 'O' || reponse_regles == 'o') {
             rappeler_regles();
@@ -36,7 +36,7 @@ do{
   }while(nbjoueurs<=0); 
     
     
-    Joueur *listejoueur = malloc(nbjoueurs * sizeof(Joueur));
+    Joueur *listejoueur = malloc(nbjoueurs * sizeof(Joueur)); // crée le tableau de joueur en fonction du nombre donné
     if (listejoueur == NULL) {
         printf("Erreur d'allocation memoire.\n");
         exit(1);
