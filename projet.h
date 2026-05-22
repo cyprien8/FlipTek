@@ -49,7 +49,7 @@ void vider_mains(Joueur *listejoueur, int nbjoueurs);
 void ajouter_carte(Joueur *j, Carte c);
 void tri_main(Carte *main, int taille_main);
 int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte);
-int calculer_score_manche(Joueur *j);// equivalent a somme_main
+int calculer_score_manche(Joueur *j);
 
 // Gestion du déroulement du jeu
 int arret_manche(Joueur *listejoueur, int nbjoueurs);
