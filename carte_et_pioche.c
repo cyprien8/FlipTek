@@ -75,10 +75,10 @@ void affiche_carte(Carte c) {
         printf("\033[0m"); 
     } else {
         printf("\033[37m"); // Blanc pour les normales
-        printf("------- \n");
-        printf("|     |\n");
-        printf("|  %3s|\n", c.label);
-        printf("|     |\n");
+        printf("-------\n");
+        printf("|      |\n");
+        printf("|  %3s |\n", c.label);
+        printf("|      |\n");
         printf("-------\n");
         printf("\033[0m"); 
     }
