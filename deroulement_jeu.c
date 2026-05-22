@@ -51,7 +51,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
                 do{ 
                 printf("Ecrire 'A' pour s'arreter volontairement ou 'P' pour piocher : ");
                 scanf(" %c", &choix);
-                }while(choix != 'A' || choix!= 'a'|| choix != 'P'|| choix != 'p');
+                }while(choix != 'A' && choix!= 'a'&& choix != 'P'&& choix != 'p');
                 
                 if (choix == 'A' || choix == 'a') {
                     listejoueur[j].est_actif = 0;
