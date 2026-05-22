@@ -30,7 +30,7 @@ int main() {
 do{
   printf("Quel est le nombre de joueurs ?");
   scanf("%d",&nbjoueurs);
-    vider_buffer();
+  vider_buffer();
   if (nbjoueurs <= 0 || nbjoueurs>=86) {
         printf("Nombre de joueurs invalide.Veuillez mettre un nombre superieur à 0.\n");
     }
