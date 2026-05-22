@@ -14,15 +14,15 @@ int main() {
 
         if (reponse_regles == 'O' || reponse_regles == 'o') {
             rappeler_regles();
-            saisie_valide = 1; // La réponse est correcte, on peut sortir de la boucle
+            saisie_valide = 1; // La réponse est correcte, on sort de la boucle
         } 
         else if (reponse_regles == 'N' || reponse_regles == 'n') {
             printf("Parfait, passons directement au jeu !\n\n");
-            saisie_valide = 1; // La réponse est correcte, on peut sortir de la boucle
+            saisie_valide = 1; // La réponse est correcte aussi
         } 
         else {
-            printf("\033[31mReponse invalide.\033[0m "); // Petit message d'erreur en rouge
-            saisie_valide = 0; // On force la répétition de la boucle
+            printf("\033[31mReponse invalide.\033[0m "); //message erreur rouge
+            saisie_valide = 0; // On répète de la boucle
         }
     } while (saisie_valide == 0);
 
@@ -33,7 +33,7 @@ do{
   if (nbjoueurs <= 0) {
         printf("Nombre de joueurs invalide.Veuillez mettre un nombre superieur à 0.\n");
     }
-  }while(nbjoueurs<=0); // Demande du nombre de joueurs
+  }while(nbjoueurs<=0); 
     
     
     Joueur *listejoueur = malloc(nbjoueurs * sizeof(Joueur));
