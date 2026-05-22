@@ -1,6 +1,10 @@
 
 #include "projet.h"
 
+void vider_buffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
 int arret_manche(Joueur *listejoueur, int nbjoueurs) {
     for (int i = 0; i < nbjoueurs; i++) {
         if (listejoueur[i].taille_main == 7 && listejoueur[i].est_actif == 1) {
@@ -51,6 +55,7 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
                 do{ 
                 printf("Ecrire 'A' pour s'arreter volontairement ou 'P' pour piocher : ");
                 scanf(" %c", &choix);
+                    vider_buffer();
                 }while(choix != 'A' && choix!= 'a'&& choix != 'P'&& choix != 'p');
                 
                 if (choix == 'A' || choix == 'a') {
@@ -162,5 +167,5 @@ void rappeler_regles() {
     
     printf("Appuyez sur Entree pour lancer la partie...");
     getchar(); // Attend que l'utilisateur lise et appuie sur Entrée
-    getchar(); 
+    
 }
