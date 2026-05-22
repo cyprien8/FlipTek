@@ -1,7 +1,7 @@
 #include "projet.h"
 
 
-void def_carte(Carte *carte, int valeur, char *label, int est_bonus, int type_bonus) { // definit une carte avec un nom, une valeur et son aspect bonus
+void def_carte(Carte *carte, int valeur, char *label, int est_bonus, int type_bonus) {
     carte->valeur = valeur;
     strcpy(carte->label, label);
     carte->est_bonus = est_bonus;
@@ -37,48 +37,48 @@ void pioche_base(Pioche *pioche) {
     def_carte(&(pioche->cartes[index++]), 8, "+8", 1, BONUS_PLUS_8);
     def_carte(&(pioche->cartes[index++]), 10, "+10", 1, BONUS_PLUS_10);
 
-    if (index != TAILLE_PIOCHE) { // si jamais l'indice du tableau n'est pas le même que la taille de la pioche totale il y a une erreur
+    if (index != TAILLE_PIOCHE) {
         printf("erreur : %d cartes initialisees au lieu de %d\n", index, TAILLE_PIOCHE);
         exit(2);
     }
     pioche->reste = TAILLE_PIOCHE;
 }
 
-void melange_pioche(Pioche *pioche) { // mélange la pioche à l'aide d'une variable temporaire
+void melange_pioche(Pioche *pioche) {
     for (int i = TAILLE_PIOCHE- 1; i > 0; i--) {
         int j = rand() % (i + 1);
         Carte temporaire = pioche->cartes[i];
         pioche->cartes[i] = pioche->cartes[j];
-        pioche->cartes[j] = temporaire; //
+        pioche->cartes[j] = temporaire; // CORRECTION : Échange de cartes complété
     }
 }
 
 
-Carte carte_dessus(Pioche *pioche) { // permet quand un joueur pioche de savoir quelle carte on pioche en fonction du tableau.
+Carte carte_dessus(Pioche *pioche) {
     if (pioche->reste <= 0) {
         // Retourne une carte fictive vide si la pioche s'épuise en cours de route
         Carte vide = {0, "VIDE", 0, BONUS_AUCUN};
         return vide;
     }
-    pioche->reste--; // decremente dans le tableau pour ne pas piocher a chaque fois la meme carte
+    pioche->reste--;
     return pioche->cartes[pioche->reste];
 }
 
-void affiche_carte(Carte c) { // affiche la carte de manuière esthetique
+void affiche_carte(Carte c) {
     if (c.est_bonus == 1) {
         printf("\033[33m"); // Jaune pour les bonus
         printf("-------\n");
-        printf("|      |\n");
-        printf("|%3s   |\n", c.label); // %3s pour caler  le texte bien
-        printf("|      |\n");
+        printf("|     |\n");
+        printf("|%3s  |\n", c.label); // %3s pour caler  le texte bien
+        printf("|     |\n");
         printf("-------\n");
         printf("\033[0m"); 
     } else {
-        printf("\033[32m"); // Blanc pour les normales
-        printf("-------\n");
-        printf("|      |\n");
-        printf("|%3s   |\n", c.label);
-        printf("|      |\n");
+        printf("\033[32m"); // vert pour les normales
+        printf("------- \n");
+        printf("|     |\n");
+        printf("|%3s  |\n", c.label);
+        printf("|     |\n");
         printf("-------\n");
         printf("\033[0m"); 
     }
