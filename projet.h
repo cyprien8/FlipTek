@@ -57,5 +57,4 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche);
 void sauvegarder_scores(Joueur *listejoueur, int nbjoueurs);
 void vider_buffer();
 
-
-void rappeler_regles();// petit rajout 
+void rappeler_regles();// rajout bonus
