@@ -81,6 +81,7 @@ C'est un jeu de cartes de "Stop ou Encore" ultra addictif qui se joue de 2 à
  PIOCHER : Tu tires une carte.
  Attention ! Si tu pioches une carte que tu as DÉJÀ dans ta main, tu perds
 tout et tu marques 0 point pour cette manche !
+
  S'ARRÊTER : Tu sécurises tes cartes actuelles et tu valides tes points
 pour la manche.
 
