@@ -10,12 +10,9 @@ ecrire qui sont les auteurs
 comment executer et comment compiler 
 
 
-
-ecire qu'il faut mettre .txt apres le nom du fichier de sauvegarde 
-
 ===============================================================
  BIENVENUE SUR LE PROJET FLIP 7 - CY TECH
- ===============================================================
+===============================================================
 
 Tu viens d'arriver sur notre dépôt ? Ne bouge pas, on t'explique tout pour pouvoir
 jouer en moins de 30 secondes !
@@ -29,6 +26,7 @@ Ouvre ton terminal Linux dans le dossier du projet et tape :
 make
 2. Pour lancer le jeu et commencer à piocher :
  ./exec
+
 (Bonus) Si tu veux nettoyer les fichiers temporaires après avoir joué :
  make clean
 
@@ -54,5 +52,13 @@ Derrière l'affichage de la console se cachent de vrais algorithmes :
 reçue.
 - Une recherche dichotomique récursive super rapide pour vérifier si tu as
 fait un doublon à chaque fois que tu pioches.
+
+AUTEURS DU PROJET
+---------------------------------------------------------------
+Ce projet a été réalisé par trois étudiants de CYTECH :
+- Bayard Cyprien
+- Gaston-Breton Mathis
+- Le Mirronet Titouan
+
 Bonne partie et attention aux doublons !
 ===============================================================
