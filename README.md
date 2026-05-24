@@ -21,8 +21,12 @@ Ouvre ton terminal Linux dans le dossier du projet et tape :
 
 C'EST QUOI LE FLIP 7 ?
 
-C'est un jeu de cartes de "Stop ou Encore" ultra addictif. À ton tour, tu as deux choix : 
+C'est un jeu de cartes de "Stop ou Encore" ultra addictif. 
+
+À ton tour, tu as deux choix : 
+
 PIOCHER : Tu tires une carte. Attention ! Si tu pioches une carte que tu as DÉJÀ dans ta main, tu perds tout et tu marques 0 point pour cette manche ! 
+
 S'ARRÊTER : Tu sécurises tes cartes actuelles et tu valides tes points pour la manche. 
 
 Comment gagner ?
