@@ -41,14 +41,14 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
         }
             if (listejoueur[j].est_actif == 1) {
                 
-                printf("\nAu tour de [%s] (%d cartes en main). Reste %d cartes dans la pioche.\n", 
+                printf("\nAu tour de %s (%d cartes en main). Reste %d cartes dans la pioche.\n", 
                        listejoueur[j].nom, listejoueur[j].taille_main, pioche->reste);
                 
                 // on affiche la main du joueur
                 if(listejoueur[j].taille_main > 0) {
                     printf("Votre main actuelle : ");
                     for(int m = 0; m < listejoueur[j].taille_main; m++) {
-                        printf("[%s] ", listejoueur[j].main[m].label);
+                        printf("%s ", listejoueur[j].main[m].label);
                     }
                     printf("\n");
                 }
