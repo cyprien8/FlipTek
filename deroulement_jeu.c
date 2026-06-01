@@ -74,7 +74,8 @@ void jouer_manche(Joueur *listejoueur, int nbjoueurs, Pioche *pioche) {
                         printf("\033[31mDommage ! La carte %s est deja dans votre main. Vous perdez TOUT pour cette manche !\033[0m\n", carte_pioche.label);
                         listejoueur[j].est_actif = 0;
                         listejoueur[j].score_manche = -1; // Marqueur d'élimination pour le calcul des scores
-                    } else {
+                    } 
+                    else {
                         ajouter_carte(&listejoueur[j], carte_pioche);
                         tri_main(listejoueur[j].main, listejoueur[j].taille_main);
                     }
