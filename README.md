@@ -1,5 +1,5 @@
 
- BIENVENUE SUR LE PROJET FLIP 7 - CY TECH
+ BIENVENUE SUR LE PROJET FLIPTEK- CY TECH
 ===============================================================
 
 Tu viens d'arriver sur notre dépôt ? Ne bouge pas, on t'explique tout pour pouvoir
