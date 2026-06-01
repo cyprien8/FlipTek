@@ -37,9 +37,8 @@ un bonus géant de +15 points et arrêter la manche.
   
  COULISSES TECHNIQUES
 ---------------------------------------------------------------
-Derrière l'affichage rétro de la console se cachent de vrais algorithmes de
-première année d'école d'ingénieurs :
-- Un mélange de deck ultra-performant (Fisher-Yates) pour un hasard parfait.
+Derrière l'affichage rétro de la console se cachent de vrais algorithmes :
+- Un mélange de deck ultra-performant pour un hasard parfait.
 - Un tri par insertion automatique qui range ta main à chaque nouvelle carte
 reçue.
 - Une recherche dichotomique récursive super rapide pour vérifier si tu as
