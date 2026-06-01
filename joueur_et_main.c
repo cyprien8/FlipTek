@@ -41,7 +41,7 @@ int recherche_dichotomique_main(Carte *tab, int debut, int fin, Carte carte) {
     }
     int milieu = (debut + fin) / 2;
     
-    if (tab[milieu].valeur == carte.valeur && !tab[milieu].est_bonus) {
+    if (tab[milieu].valeur == carte.valeur) {
         return 1; 
     }
     if (tab[milieu].valeur > carte.valeur) {
